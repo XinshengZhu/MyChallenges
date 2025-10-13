@@ -1,2 +1,2 @@
 # MyChallenges
-A repository that contains my CTF challenges.
+A repository that contains the CTF challenges I wrote.
