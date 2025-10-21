@@ -1,0 +1,25 @@
+# yaml-language-server: $schema=../../schema.json
+apiVersion: v1alpha1
+kind: ctfer.io/Dynamic
+spec:
+  name: Celestial Cafeteria
+  description: |
+    Welcome to the Celestial Cafeteria!
+    Take a seat, place an order, and enjoy the feast!
+  attribution: 4n74r3s
+  value: 500
+  minimum: 50
+  decay: 275
+  function: logarithmic
+  state: visible
+
+  flags:
+    - csawctf{Rinbo2_wh47_4_yummy_b07c4k3_cohqif_0n3_m0r3_p13453_duzsad}
+
+  files:
+    - infra/chal
+    - infra/ld-linux-x86-64.so.2
+    - infra/libc.so.6
+
+  connection_info: |
+    nc chals.ctf.csaw.io 21008

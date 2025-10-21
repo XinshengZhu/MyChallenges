@@ -1,0 +1,26 @@
+# yaml-language-server: $schema=../../schema.json
+apiVersion: v1alpha1
+kind: ctfer.io/Dynamic
+spec:
+  name: Colony Defense
+  description: |
+    Planet colonization in space is very dangerous and often needs to resist alien invasions!
+    Weapons and ammunition must be sufficient!
+    Otherwise, the consequences will be severe!
+  attribution: 4n74r3s
+  value: 500
+  minimum: 50
+  decay: 275
+  function: logarithmic
+  state: visible
+
+  flags:
+    - csawctf{mafmub_hum4n_c4n_1053_gugCi0_bu7_4l13n5_c4n_n3v3r_w1n_dikjop}
+
+  files:
+    - infra/chal
+    - infra/ld-linux-x86-64.so.2
+    - infra/libc.so.6
+
+  connection_info: |
+    nc chals.ctf.csaw.io 21001

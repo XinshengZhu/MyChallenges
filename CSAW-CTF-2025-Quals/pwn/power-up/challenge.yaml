@@ -1,0 +1,55 @@
+# yaml-language-server: $schema=../../schema.json
+apiVersion: v1alpha1
+kind: ctfer.io/DynamicIaC
+spec:
+  name: Power Up
+  description: |
+    Power up the starship as soon as possible, or stay stranded in the endless darkness forever!
+  attribution: 4n74r3s
+  value: 500
+  minimum: 50
+  decay: 275
+  function: logarithmic
+  state: visible
+
+  flags:
+    - csawctf{tyjroj_71m3_7o_g0_h0m3_zoqSy9_5w337_h0m3_nywcyp}
+
+  files:
+    - infra/chal
+    - infra/ld-linux-x86-64.so.2
+    - infra/libc.so.6
+
+  shared: true
+  start: true
+  scenario:
+    apiVersion: v1alpha1
+    kind: sdk.ctfer.io/manual
+    spec:
+      reference: common/aws-monopod-tcp:v0.1.0
+    outputs:
+      connection_info: |
+        {{- $hostport := index .URLs "21005/TCP" -}}
+        {{- $parts := splitList ":" $hostport -}}
+        {{- $host := "" -}}
+        {{- $port := "" -}}
+
+        {{- if ge (len $parts) 1 -}}
+          {{- $host = index $parts 0 -}}
+        {{- end -}}
+
+        {{- if ge (len $parts) 2 -}}
+          {{- $port = index $parts 1 -}}
+        {{- end -}}
+
+        {{- if and $host $port -}}
+        nc {{ $host }} {{ $port }}
+        {{- else -}}
+        # Host or port not available: {{ $hostport }}
+        {{- end -}}
+    additional:
+      image: 391919513406.dkr.ecr.us-east-1.amazonaws.com/pwn/power-up:v0.1.0 # XXX manual effort here
+      port: '21005'
+      hostname: chals.ctf.csaw.io
+      minReplicas: '1'
+      maxReplicas: '10'
