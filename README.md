@@ -1,6 +1,6 @@
 # MyChallenges
 
-A repository that contains the CTF challenges I wrote.
+A repository that contains the CTF challenges I wrote. The challenges I played are [here](https://github.com/XinshengZhu/CTFs)!
 
 ### CSAW CTF Qualification Round 2025
 
