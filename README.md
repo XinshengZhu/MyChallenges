@@ -11,13 +11,3 @@ A repository that contains the CTF challenges I wrote.
 | [Colony Defense](./CSAW-CTF-2025-Quals/pwn/colony-defense/) | pwn | Large Bin Attack |
 | [Power Up](./CSAW-CTF-2025-Quals/pwn/power-up/) | pwn | Unsafe Unlink and `__exit_funcs` Abuse |
 | [Space Portal](./CSAW-CTF-2025-Quals/rev/space-portal/) | rev | N/A |
-
-### CSAW CTF Final Round 2025
-
-| Challenge | Category | Technique |
-|---------------|---------------|---------------|
-| [?]() | ? | ? |
-| [?]() | ? | ? |
-| [?]() | ? | ? |
-| [?]() | ? | ? |
-| [?]() | ? | ? |
